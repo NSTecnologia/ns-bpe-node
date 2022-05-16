@@ -1,0 +1,19 @@
+{
+  "name": "ns-bpe-node",
+  "version": "1.0.0",
+  "description": "Esta biblioteca possibilita a comunicação e o consumo da solução API para BPe da NS Tecnologia.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NSTecnologia/ns-bpe-node.git"
+  },
+  "author": "NS TECNOLOGIA",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NSTecnologia/ns-bpe-node/issues"
+  },
+  "homepage": "https://github.com/NSTecnologia/ns-bpe-node#readme"
+}
