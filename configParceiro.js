@@ -1,4 +1,4 @@
-const token = "SEU TOKEN AQUI"
-const CNPJ = "CNPJ DO EMITENTE"
+const token = "SEU_TOKEN_AQUI"
+const CNPJ = "CNPJ EMITENTE"
 
 module.exports = { token, CNPJ }
