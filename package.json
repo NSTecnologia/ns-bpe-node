@@ -1,6 +1,6 @@
 {
   "name": "ns-bpe-node",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Esta biblioteca possibilita a comunicação e o consumo da solução API para BPe da NS Tecnologia.",
   "main": "index.js",
   "scripts": {
