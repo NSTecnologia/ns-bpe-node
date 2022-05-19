@@ -45,7 +45,7 @@ Os parâmetros deste método são:
 + *BPeEmit* = objeto BPe que será serializado para envio;
 + *2* = tpAmb = ambiente onde será autorizado a NFe. *1 = produção, 2 = homologação / testes* ;
 + *"XP"* = tpDown = tipo de download, indicando quais os tipos de arquivos serão obtidos no Download;
-+ *"./B"* = diretório onde serão salvos os documentos obtidos no download;
++ *"./BPe"* = diretório onde serão salvos os documentos obtidos no download;
 
 O retorno deste método é um objeto json contendo um compilado dos retornos dos métodos realizados pela emissão sincrona:
 
