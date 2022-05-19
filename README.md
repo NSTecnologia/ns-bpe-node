@@ -25,7 +25,7 @@ Dessa forma, o pacote conseguirá importar as suas configurações, onde você e
 
 ## Emissão
 
-Para realizarmos a emissão de uma NFe, vamos utilizar os seguintes métodos.
+Para realizarmos a emissão de uma BPe, vamos utilizar os seguintes métodos.
 
 Primeiramente, vamos fazer referencia da classe *emitirSincrono*, para utilizarmos o método **emitirBPeSincrono**
 
@@ -43,9 +43,9 @@ Este método realiza a emissão, a consulta de status de processamento e o downl
 Os parâmetros deste método são:
 
 + *BPeEmit* = objeto BPe que será serializado para envio;
-+ *2* = tpAmb = ambiente onde será autorizado a NFe. *1 = produção, 2 = homologação / testes* ;
++ *2* = tpAmb = ambiente onde será autorizado a BPe. *1 = produção, 2 = homologação / testes* ;
 + *"XP"* = tpDown = tipo de download, indicando quais os tipos de arquivos serão obtidos no Download;
-+ *"./B"* = diretório onde serão salvos os documentos obtidos no download;
++ *"./BPe"* = diretório onde serão salvos os documentos obtidos no download;
 
 O retorno deste método é um objeto json contendo um compilado dos retornos dos métodos realizados pela emissão sincrona:
 
@@ -61,7 +61,7 @@ O retorno deste método é um objeto json contendo um compilado dos retornos dos
 			nProt: '143220000151842',
 			xml: '<?xml version="1.0" encoding="utf-8"?><bpeProc versao="1.00" xmlns="http://www.portalfiscal.inf.br/bpe"><BPe><infBPe versao="1.00" Id="BPe43220507364617000135630600000000101813509436">
 		   json: undefined, // json do BPe autorizada quando tpDown = "J", ou "JP"
-           pdf: undefined, // base64 do PDF da NFe ( DABPE ) autorizada quando tpDown = "P", "XP", "JP"
+           pdf: undefined, // base64 do PDF da BPe ( DABPE ) autorizada quando tpDown = "P", "XP", "JP"
            erros: undefined // array de erros quando a comunicação, emissão, ou processamento apresentar erros
          }
        }
@@ -172,7 +172,7 @@ Para realizarmos um cancelamento de um BPe, devemos gerar o objeto do corpo da r
        
        const cancelarBPe = require('./ns_modules/bpe_module/eventos/cancelamentoBPe')
 
-       let corpo = new cancelarNFe.body(
+       let corpo = new cancelarBPe.body(
            "43220507364617000135630600000000071963550061",
            "2",
            "2022-05-16T10:43:00-03:00",
@@ -209,7 +209,7 @@ Os parâmetros informados no método são:
 
 + *corpo* =  Objeto contendo as informações do corpo da requisição da carta de correção;
 + *"X"* = tpDown = tipo de download, indicando quais os tipos de arquivos serão obtidos no download do evento de alteração de poltrona;
-+ *"Documentos/NFe/Eventos"* = diretório onde serão salvos os arquivos obtidos no download do evento de alteração de poltrona;
++ *"./Eventos"* = diretório onde serão salvos os arquivos obtidos no download do evento de alteração de poltrona;
 
 ### Excesso de bagagem BPe
 
@@ -277,7 +277,7 @@ Ainda com esta biblioteca, é possivel acessar método utilitários da API de BP
 			const gerarPDF = require('./ns_modules/bpe_module/util/gerarPDF')
 
 			let corpo = new gerarPDF.Body(
-				"<?xml version=\"1.0\" encoding=\"utf-8\"?><nfeProc versao=\"4.00\" xmlns=\"http://www.portalfiscal.inf.br/nfe\"><NFe>...</NFe><protNFe versao=\"4.00\">...</protNFe></nfeProc>",
+				"<?xml version=\"1.0\" encoding=\"utf-8\"?><bpeProc versao=\"1.00\" xmlns=\"http://www.portalfiscal.inf.br/bpe\"><BPe><infBPe versao=\"1.00\">...</protBPe></bpeProc>",
 				"true",
 				"true"
 			)
